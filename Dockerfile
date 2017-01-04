@@ -19,9 +19,6 @@ RUN pip install -r python-req.txt
 # Copy Flask App
 COPY app.py /opt/example/app/
 
-# Export Flask port
-EXPOSE 5000
-
 # Run Example App
 ENTRYPOINT ["python"]
 CMD ["app/app.py"]
