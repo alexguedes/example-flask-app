@@ -4,6 +4,7 @@ MAINTAINER Alex Guedes <alex.guedes@gmail.com>
 # Update and install Python
 RUN \
   yum update -y && \
+  yum install -y epel-release && \
   yum install -y python python-pip python-setuptools && \
   yum clean all
 
