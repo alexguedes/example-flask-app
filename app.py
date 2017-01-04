@@ -1,10 +1,12 @@
 from flask import Flask, jsonify
+from socket import gethostname
+
 app = Flask(__name__)
 
 
 @app.route("/")
 def hello():
-    return jsonify({'message': 'hello world.'}), 200
+    return jsonify({'message': 'hello world.', 'hostname': gethostname()}), 200
 
 if __name__ == "__main__":
     app.run(debug=True,host='0.0.0.0')
