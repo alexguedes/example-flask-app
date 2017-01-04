@@ -23,5 +23,5 @@ COPY app.py /opt/example/app/
 EXPOSE 5000
 
 # Run Example App
-ENTRYPOINT["python"]
+ENTRYPOINT ["python"]
 CMD ["app/app.py"]
