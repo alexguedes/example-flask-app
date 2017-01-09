@@ -9,4 +9,4 @@ def hello():
     return jsonify({'message': 'hello world.', 'hostname': gethostname()}), 200
 
 if __name__ == "__main__":
-    app.run(debug=False,host='0.0.0.0')
+    app.run(debug=False,host='0.0.0.0',threaded=True)
