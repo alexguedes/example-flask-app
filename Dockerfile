@@ -13,8 +13,8 @@ RUN mkdir -p /opt/example/app
 WORKDIR /opt/example
 
 # Install Python requirements
-COPY python-req.txt /opt/example/
-RUN pip install -r python-req.txt
+COPY requirements.txt /opt/example/
+RUN pip install -r requirements.txt
 
 # Copy Flask App
 COPY app.py /opt/example/app/
