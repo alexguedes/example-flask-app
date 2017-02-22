@@ -1,14 +1,18 @@
 # example-flask-app
 
-### To create SSH tunnel for Swarm
+### To push app 
 ```
-ssh -L 2375:localhost:2375 -f -N [server].cloudapp.azure.com -p 2200
-export DOCKER_HOST=:2375
+cf push example-flask-app
 ```
 
-### To start and scale on Swarm Cluster:
-Make sure you're in the same folder as the docker-compose.yml file.
+### To add and bind MySQL service
 ```
-docker-compose up -d
-docker-compose scale example-flask-app=2
+cf create-service cleardb type flask-app-db
+cf bind-service example-flask-app flask-app-db
+cf restart example-flask-app
+```
+
+### How to scale app horizontally
+```
+cf scale -i 2
 ```
