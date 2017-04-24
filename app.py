@@ -11,6 +11,6 @@ def hello():
     return jsonify({'message': 'hello world.', 'hostname': gethostname(), 'services-bind': json.loads(vcap_services)}), 200
 
 
-port = getenv('VCAP_APP_PORT', '5000')
+port = getenv('PORT', '5000')
 if __name__ == "__main__":
     app.run(debug=False, host='0.0.0.0', port=port, threaded=True)

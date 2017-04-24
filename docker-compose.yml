@@ -1,8 +1,0 @@
-example-flask-app:
-  image: alexguedes/example-flask-app
-  ports:
-    - "80:5000"
-  environment:
-    - "affinity:container!=*example-flask-app*"
-  labels:
-    - "com.myself.name=example-flask-app"
