@@ -1,0 +1,6 @@
+---
+applications:
+- name: example-flask 
+  memory: 128M 
+  instances: 1
+  host: example-flask-${random-word}
